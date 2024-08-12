@@ -22,6 +22,14 @@ public class SecurityConfig {
                 .authenticated();
         http
                 .formLogin();
+
+        // apply는 configurer를 받아서 configurer를 return함
+        // 그렇기 때문에 CustomSecurityConfigurer.setFlag의 return type을 CustomSecurityConfigurer로 설정
+        // chaining이 가능해짐! .setFlag1().setFlag2() 이런 식으로
+
+        // auto configuration에 의해 configurers에 넣어지고, custom으로 만들어준 CustomSecurityConfigurer도 들어가게 됨
+        // init -> configure -> setFlag까지 쭉 실행됨
+        http.apply(new CustomSecurityConfigurer().setFlag(true));
         return http.build();
     }
 }
