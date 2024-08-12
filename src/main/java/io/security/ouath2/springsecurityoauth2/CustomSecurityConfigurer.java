@@ -28,4 +28,11 @@ public class CustomSecurityConfigurer extends AbstractHttpConfigurer<CustomSecur
             System.out.println("https is optional");
         }
     }
+
+    // HttpSercurity.apply()는 configurer를 받아서 configurer를 return함
+    // return type을 CustomSecurityConfigurer로 설정하여 chaining이 가능하도록
+    public CustomSecurityConfigurer setFlag(boolean isSecure) {
+        this.isSecure = isSecure;
+        return this;
+    }
 }
