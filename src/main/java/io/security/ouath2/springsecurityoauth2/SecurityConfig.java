@@ -44,4 +44,9 @@ public class SecurityConfig {
 
         return http.build();
     }
+
+    // SecurityFilterChains를 열어보면 2개의 SecurityFilterChain가 존재,
+    // securityFilterChain1로 만들어진건 form login이기 때문에 UserNamePasswordAuthenticationFilter가 포함됨
+    // securityFilterChain2로 만들어진건 basic login이기 때문에 BasicAuthenticationFilter가 포함됨
+    // 물론 filter 개수도 다름!
 }
