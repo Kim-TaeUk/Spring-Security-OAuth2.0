@@ -3,6 +3,7 @@ package io.security.ouath2.springsecurityoauth2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
 //@EnableWebSecurity이 @Configuration를 가지고 있기 때문에 둘 다 가능
@@ -43,6 +44,10 @@ public class SecurityConfig {
                 .authenticated();
         http
                 .httpBasic();
+        http
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        // SecurityContextHolder를 통해 SecurityContext를 관리하는데, STATELESS로 설정하는 경우
+        // session을 통해 인증 정보를 유지하지 않음
 
         return http.build();
     }
