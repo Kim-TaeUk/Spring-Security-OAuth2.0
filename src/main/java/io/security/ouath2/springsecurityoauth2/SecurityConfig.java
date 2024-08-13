@@ -15,7 +15,7 @@ public class SecurityConfig {
     // SecurityFilterChain 타입의 bean 생성
     // bean이기 때문에 HttpSecurity을 의존성 주입받을 수 있음
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain1(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests()
                 .anyRequest()
