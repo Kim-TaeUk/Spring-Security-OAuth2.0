@@ -32,4 +32,16 @@ public class SecurityConfig {
 //        http.apply(new CustomSecurityConfigurer().setFlag(true));
         return http.build();
     }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain2(HttpSecurity http) throws Exception {
+        http
+                .authorizeHttpRequests()
+                .anyRequest()
+                .authenticated();
+        http
+                .httpBasic();
+
+        return http.build();
+    }
 }
