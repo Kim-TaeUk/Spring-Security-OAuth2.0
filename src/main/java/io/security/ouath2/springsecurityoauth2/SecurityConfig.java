@@ -29,7 +29,7 @@ public class SecurityConfig {
 
         // auto configuration에 의해 configurers에 넣어지고, custom으로 만들어준 CustomSecurityConfigurer도 들어가게 됨
         // init -> configure -> setFlag까지 쭉 실행됨
-        http.apply(new CustomSecurityConfigurer().setFlag(true));
+//        http.apply(new CustomSecurityConfigurer().setFlag(true));
         return http.build();
     }
 }
