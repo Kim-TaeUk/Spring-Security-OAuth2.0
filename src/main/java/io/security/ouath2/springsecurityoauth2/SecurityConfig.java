@@ -12,6 +12,7 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class SecurityConfig {
 
+    /*
     // SecurityFilterChain 타입의 bean 생성
     // bean이기 때문에 HttpSecurity을 의존성 주입받을 수 있음
     @Bean
@@ -32,6 +33,7 @@ public class SecurityConfig {
 //        http.apply(new CustomSecurityConfigurer().setFlag(true));
         return http.build();
     }
+    */
 
     @Bean
     public SecurityFilterChain securityFilterChain2(HttpSecurity http) throws Exception {
