@@ -43,7 +43,7 @@ public class SecurityConfig {
                 .anyRequest()
                 .authenticated();
         http
-                .httpBasic();
+                .httpBasic().authenticationEntryPoint(new CustomAuthenticationEntryPoint());
         http
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         // SecurityContextHolder를 통해 SecurityContext를 관리하는데, STATELESS로 설정하는 경우
